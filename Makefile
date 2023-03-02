@@ -1,8 +1,11 @@
 # Makefile for MT2500 build
 
-TOPDIR:=$(CURDIR)
-BUILD_DIR:=$(TOPDIR)/build_dir
-export TOPDIR
+TOPDIR := $(CURDIR)
+BUILD_DIR := $(TOPDIR)/build_workspace
+export TOPDIR BUILD_DIR
+
+CONFIG_FILE ?= $(TOPDIR)/etc/setup_config.yml
+PROFILE ?= $(TOPDIR)/etc/profile_template.yml
 
 empty:=
 space:= $(empty) $(empty)
@@ -14,7 +17,13 @@ clean:
 
 distclean:
 	@echo 彻底清除编译...
-	@rm -rf $(BUILDDIR)
+	@rm -rf $(BUILD_DIR)
+
+setup:
+	@echo setup workspace...
+	@echo $(CONFIG_FILE)
+	@echo $(PROFILE)
+	@$(TOPDIR)/scripts/setup.py -c $(CONFIG_FILE) -p $(PROFILE)
 
 all:
 
