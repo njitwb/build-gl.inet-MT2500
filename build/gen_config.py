@@ -9,7 +9,7 @@ import time
 import sys
 import yaml
 
-profile_folder = Path(getenv("PROFILES", "./profiles")).absolute()
+profile_folder = Path(getenv("PROFILES_DIR")).absolute()
 warnings = []
 
 

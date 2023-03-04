@@ -1,0 +1,40 @@
+---
+description: GL nas utils
+
+packages:
+  - gl-sdk4-nas-utils
+  - gl-sdk4-nas-web
+  - gl-sdk4-exfat-utils
+  - gl-sdk4-webdav
+  - samba4-server
+  - samba4-libs
+  - samba4-utils
+  - minidlna
+  - blkid
+  - kmod-fs-ext4
+  - kmod-fs-ntfs
+  - kmod-fs-vfat
+  - kmod-fs-exfat
+  - kmod-usb-storage-uas
+  - ntfs-3g
+  - ntfs-3g-utils
+  - dosfstools
+  - e2fsprogs
+
+
+
+diffconfig: |
+  CONFIG_SAMBA4_SERVER_VFSX=y
+  CONFIG_SAMBA4_SERVER_AD_DC=y
+  CONFIG_BUSYBOX_CONFIG_ADDGROUP=y
+  CONFIG_BUSYBOX_CONFIG_FEATURE_ADDUSER_TO_GROUP=y
+  CONFIG_BUSYBOX_CONFIG_ADDUSER=y
+  CONFIG_BUSYBOX_CONFIG_CHPASSWD=y
+  CONFIG_BUSYBOX_CONFIG_DELUSER=y
+  CONFIG_BUSYBOX_CONFIG_DELGROUP=y
+  CONFIG_BUSYBOX_CONFIG_FEATURE_DEL_USER_FROM_GROUP=y
+
+
+
+
+
