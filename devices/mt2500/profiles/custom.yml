@@ -1,0 +1,36 @@
+---
+description: Add custom packages
+
+feeds:
+  - name: aria2
+    path: ../../feeds/aria2
+  - name: ariang_nginx
+    path: ../../feeds/ariang-nginx
+  - name: default_settings
+    path: ../../feeds/default-settings
+  - name: luci_app_adguardhome
+    path: ../../feeds/luci-app-adguardhome
+  - name: luci_app_alist
+    path: ../../feeds/luci-app-alist
+  - name: luci_theme_argon
+    path: ../../feeds/luci-theme-argon
+  - name: netspeedtest
+    path: ../../feeds/netspeedtest
+  - name: openclash
+    path: ../../feeds/openclash
+
+packages:
+  - aria2
+  - ariang
+  - luci-app-aria2
+  - alist
+  - luci-app-alist
+  - luci-app-argon-config
+  - luci-theme-argon
+  - luci-app-openclash
+  - homebox
+  - luci-app-netspeedtest
+  - luci-app-adguardhome
+
+diffconfig: |
+  CONFIG_PACKAGE_dnsmasq=n

@@ -215,6 +215,7 @@ CONFIG_TARGET_{profile["target"]}_{profile["subtarget"]}_DEVICE_{profile["profil
 
     config_output += f"{profile.get('diffconfig', '')}"
 
+    print(config_output)
     Path(".config").write_text(config_output)
     print("Configuration written to .config")
 

@@ -4,6 +4,8 @@ empty:=
 space:= $(empty) $(empty)
 $(if $(findstring $(space),$(TOP_DIR)),$(error ERROR: The path to the build directory must not include any spaces))
 
+default: all
+
 clean:
 	@echo 清理编译...
 	@test -d $(BUILD_DIR)/openwrt && $(MAKE) -C $(BUILD_DIR)/openwrt clean || echo "$(BUILD_DIR)/openwrt 目录不存在..."
@@ -19,5 +21,7 @@ setup:
 	@echo GL_UI=$(GL_UI)
 	@$(TOP_DIR)/build/setup.py -c $(CONFIG_FILE)
 
-all: setup
+openwrt:
 	$(MAKE) -C $(BUILD_DIR)/openwrt
+
+all: setup openwrt
