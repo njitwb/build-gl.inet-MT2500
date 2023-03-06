@@ -18,6 +18,8 @@ feeds:
     path: ../../feeds/netspeedtest
   - name: openclash
     path: ../../feeds/openclash
+  - name: diskman
+    path: ../../feeds/diskman
 
 packages:
   - aria2
@@ -31,6 +33,13 @@ packages:
   - homebox
   - luci-app-netspeedtest
   - luci-app-adguardhome
+  - parted
+  - mdadm
+  - luci-app-diskman
 
 diffconfig: |
   CONFIG_PACKAGE_dnsmasq=n
+  CONFIG_IMAGEOPT=y
+  CONFIG_PREINITOPT=y
+  CONFIG_TARGET_PREINIT_IP="192.168.8.1"
+  CONFIG_TARGET_PREINIT_BROADCAST="192.168.8.255"
